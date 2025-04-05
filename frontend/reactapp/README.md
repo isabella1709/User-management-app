@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# User Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a complete user management system built with **React** on the frontend and **Node.js + MySQL** on the backend. It allows users to **list**, **add**, **edit**, **view**, and **delete**.
 
-## Available Scripts
+## 🖥️ Technologies Used
 
-In the project directory, you can run:
+### Frontend
 
-### `npm start`
+* [React](https://reactjs.org/)
+* [React Router DOM](https://reactrouter.com/)
+* CSS for styling
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Backend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* [Node.js](https://nodejs.org/) and npm
+* [MySQL](https://www.mysql.com/)
+* [React](https://reactjs.org/) (installed via `npm install`)
+* (Optional) [Yarn](https://yarnpkg.com/)
 
-### `npm test`
+## 🚀 Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* **User listing** with detailed view (`/list`)
+* **Add new user** (`/add`)
+* **Edit existing user** (`/edit/:id`)
+* **View full user details** (`/details/:id`)
+* **Delete user** with confirmation
 
-### `npm run build`
+## 🛠️ Database Configuration
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Use the following SQL script to create the database and `users` table:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sql
+CREATE DATABASE IF NOT EXISTS crud_users;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+USE crud_users;
 
-### `npm run eject`
+CREATE TABLE IF NOT EXISTS users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(100) NOT NULL,
+  sobrenome VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  genero VARCHAR(20) NOT NULL,
+  anoNascimento INT NOT NULL,
+  cpf VARCHAR(20) NOT NULL
+);
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+> Make sure the database access credentials are properly configured in the `db.js` file.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 How to Run the Project Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* [Node.js](https://nodejs.org/) and npm
+* [MySQL](https://www.mysql.com/)
+* [React](https://reactjs.org/) (installed via `npm install`)
+* [React Router DOM](https://reactrouter.com/) (`npm install react-router-dom`)
+* (Optional) [Yarn](https://yarnpkg.com/)
 
-## Learn More
+### 1. Clone the Repository
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2. Configure the Database
 
-### Code Splitting
+Run the `crud_users.sql` script on your MySQL server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+mysql -u your_user -p < crud_users.sql
+```
 
-### Analyzing the Bundle Size
+### 3. Backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+cd backend
+npm install
+npm start
+```
 
-### Making a Progressive Web App
+The backend will be available at `http://localhost:8800`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 4. Frontend
 
-### Advanced Configuration
+```bash
+cd frontend
+npm install
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The frontend will start at `http://localhost:3000`.
 
-### Deployment
+## ✨ Layout
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The project features a dark, responsive layout with styled buttons, visual feedback, and well-organized forms.
 
-### `npm run build` fails to minify
+## 👤 Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Developed by **Isabella Vanderlinde Berkembrock**.
