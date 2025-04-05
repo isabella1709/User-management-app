@@ -86,6 +86,7 @@ The backend will be available at `http://localhost:8800`.
 
 ```bash
 cd frontend
+cd reactapp
 npm install
 npm start
 ```
