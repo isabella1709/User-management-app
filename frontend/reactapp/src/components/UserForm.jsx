@@ -69,8 +69,7 @@ const UserForm = ({ user, onClose }) => {
             <button type="submit">Salvar</button>
             <button type="button" onClick={onClose}>Cancelar</button>
         </div>
-        
-    </form>
+    </form>    
   );
 };
 
