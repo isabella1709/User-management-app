@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS users (
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone [https://github.com/your-username/your-repo.git](https://github.com/isabella1709/User-management-app.git)
 cd your-repo
 ```
 
