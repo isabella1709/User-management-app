@@ -27,7 +27,7 @@ This project is a complete user management system built with **React** on the fr
 
 ## 🛠️ Database Configuration
 
-Run the `user.sql` script on MySQL Workbench:
+Run the `user.sql` script on MySQL Workbench;
 
 > Make sure the database access credentials are properly configured in the `db.js` file.
 
