@@ -44,7 +44,7 @@ Run the `user.sql` script on MySQL Workbench;
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/isabella1709/User-management-app.git
 cd your-repo
 ```
 
