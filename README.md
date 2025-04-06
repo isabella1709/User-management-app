@@ -27,23 +27,7 @@ This project is a complete user management system built with **React** on the fr
 
 ## 🛠️ Database Configuration
 
-Use the following SQL script to create the database and `users` table:
-
-```sql
-CREATE DATABASE IF NOT EXISTS crud_users;
-
-USE crud_users;
-
-CREATE TABLE IF NOT EXISTS users (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  nome VARCHAR(100) NOT NULL,
-  sobrenome VARCHAR(100) NOT NULL,
-  email VARCHAR(100) NOT NULL,
-  genero VARCHAR(20) NOT NULL,
-  anoNascimento INT NOT NULL,
-  cpf VARCHAR(20) NOT NULL
-);
-```
+Run the `user.sql` script on MySQL Workbench:
 
 > Make sure the database access credentials are properly configured in the `db.js` file.
 
@@ -66,11 +50,7 @@ cd your-repo
 
 ### 2. Configure the Database
 
-Run the `crud_users.sql` script on your MySQL server:
-
-```bash
-mysql -u your_user -p < crud_users.sql
-```
+Run the `crud_users.sql` script on MySQL Workbench:
 
 ### 3. Backend
 
