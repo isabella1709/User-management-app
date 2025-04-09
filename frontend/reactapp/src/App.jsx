@@ -10,17 +10,20 @@ import ListUser from "./pages/ListUser";
 function App() {
   const [data, setData] = useState([]);
 
+  // data é uma lista de usuários
+  // setData é para atualizar a lista
+
   const fetchUsers = async () => {
-    try {
+  try { // faz uma requisição GET para o backend
       const res = await fetch("http://localhost:8800");
-      const json = await res.json();
-      setData(json);
-    } catch (err) {
+      const json = await res.json(); // converte o resultado para JSON
+      setData(json); // atualiza a lista de usuários
+    } catch (err) { //caso contrário retorna um erro na operação
       console.error("Erro ao buscar usuários:", err);
     }
   };
 
-  useEffect(() => {
+  useEffect(() => { // chama o fetchUsers para preencher a lista de usuários
     fetchUsers();
   }, []);
 

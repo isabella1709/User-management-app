@@ -1,20 +1,23 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const DataList = ({ data, setData }) => {
+const DataList = ({ data, setData }) => { 
+  // data é uma lista de usuários
+  // setData é para atualizar a lista
+
   const navigate = useNavigate();
 
-  const handleDelete = async (id) => {
-    if (!window.confirm("Tem certeza que deseja remover este usuário?")) return;
+  const handleDelete = async (id) => { // função para deletar um usuário
+    if (!window.confirm("Tem certeza que deseja remover este usuário?")) return; // confirmar a deleção
 
     try {
-      await fetch(`http://localhost:8800/${id}`, {
+      await fetch(`http://localhost:8800/${id}`, { // enviar uma requisição de deleção para o backend com o id do usuário
         method: "DELETE",
       });
 
-      setData((prev) => prev.filter((user) => user.id !== id));
-    } catch (err) {
-      console.error("Erro ao deletar usuário:", err);
+      setData((prev) => prev.filter((user) => user.id !== id)); // atualiza a lista
+    } catch (err) { // caso contrário retorna erro na operação
+      console.error("Erro ao deletar usuário:", err); 
     }
   };
 

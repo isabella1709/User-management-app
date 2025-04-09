@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 const AddUser = ({ onSaved }) => {
   const navigate = useNavigate();
 
-  const handleClose = () => {
-    onSaved();
-    navigate("/");
+  const handleClose = () => { //função para quando o formulário for finalizado
+    onSaved(); // atualiza a lista de usuários
+    navigate("/"); // redireciona para página inicial
   };
 
   return (

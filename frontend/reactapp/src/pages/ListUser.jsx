@@ -1,13 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
-const ListUser = ({data}) => {
-  //const navigate = useNavigate();
-
-  //const handleClose = () => {
-    //onSaved();
-    //navigate("/");
-  //};
+const ListUser = ({data}) => { // recebe a lista de usuários
 
   return (
     <div>

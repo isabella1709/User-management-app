@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 const UserDetails = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // armazenar id que vem na url
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null); // inicializa o user como null
 
   useEffect(() => {
     const fetchUser = async () => {
-      try {
+      try { // faz uma requisição GET para buscar o usuário pelo id
         const res = await fetch(`http://localhost:8800/${id}`);
         const json = await res.json();
-        setUser(json);
+        setUser(json); // armazena os dados do user
       } catch (err) {
         console.error("Erro ao buscar usuário:", err);
       }
@@ -20,7 +20,7 @@ const UserDetails = () => {
     fetchUser();
   }, [id]);
 
-  if (!user) return <p>Carregando...</p>;
+  if (!user) return <p>Carregando...</p>; // enquanto os dados do usuário não forem carregados
 
   return (
     <div className="crud-user">
