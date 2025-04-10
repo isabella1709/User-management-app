@@ -4,5 +4,5 @@ export const db = mysql.createConnection({ // define as credenciais de conexão 
     host: "",
     user: "",
     password: "",
-    database: ""
+    database: "crud"
 });
